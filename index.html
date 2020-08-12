@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <head>
+        <title>Codeforces Rating 换算</title>
+        <script>
+            function ratingCalc() {
+                var newRating = parseInt(document.getElementById("new-rating").value);
+                var competitionTimes = parseInt(document.getElementById("competition-times").value);
+                var oldRating = newRating;
+                var calcHtml = "";
+                if(competitionTimes >= 6) oldRating = newRating + 100;
+                else if(competitionTimes == 5) oldRating = newRating + 150;
+                else if(competitionTimes == 4) oldRating = newRating + 250;
+                else if(competitionTimes == 3) oldRating = newRating + 400;
+                else if(competitionTimes == 2) oldRating = newRating + 650;
+                else if(competitionTimes == 1) oldRating = newRating + 1000;
+                else if(competitionTimes == 0) calcHtml = "<p style='color:black;'>unrated</p>";
+                else calcHtml = "<p>Invalid</p>";
+                if(calcHtml != "<p>Invalid</p>" && calcHtml != "<p>unrated</p>") {
+                    if(oldRating >= 3000) calcHtml = "<p style='color:#FF0000;'>legendary grandmaster,";
+                    else if(oldRating >= 2600) calcHtml = "<p style='color:#FF0000;'>international grandmaster,";
+                    else if(oldRating >= 2400) calcHtml = "<p style='color:#FF0000;'>grandmaster,";
+                    else if(oldRating >= 2300) calcHtml = "<p style='color:#FF8C00;'>international master,";
+                    else if(oldRating >= 2100) calcHtml = "<p style='color:#FF8C00;'>master,";
+                    else if(oldRating >= 1900) calcHtml = "<p style='color:#AA00AA;'>candidate master,";
+                    else if(oldRating >= 1600) calcHtml = "<p style='color:#0000FF;'>expert,";
+                    else if(oldRating >= 1400) calcHtml = "<p style='color:#03A89E;'>specialist,";
+                    else if(oldRating >= 1200) calcHtml = "<p style='color:#008000;'>pupil,";
+                    else calcHtml = "<p style='color:#808080;'>newbie,";
+                    calcHtml += oldRating;
+                    calcHtml += "</p>";
+                }
+                document.getElementById("res").innerHTML = calcHtml;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="color:red;">Codeforces Rating 换算</h1>
+        <p>我们知道，Codeforces 在大约 2020 年 5 月更换了 <a href="https://codeforces.com/blog/entry/77890">rating 的计算规则</a>。这个项目的目的是帮助更多的人更加方便地进行 rating 换算。</p>
+        <input id="new-rating" placeholder="新规则 rating"></input>
+        <input id="competition-times" placeholder="比赛场数"></input>
+        <button onclick="ratingCalc()">计算</button>
+        <p>计算结果：</p>
+        <div id="res"></div>
+    </body>
+</html>
