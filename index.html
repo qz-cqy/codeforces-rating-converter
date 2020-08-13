@@ -35,32 +35,33 @@
             document.getElementById("res").innerHTML = calcHtml;
         }
         function ratingCalc2() {
-            var oldRating = parseInt(document.getElementById("old-rating").value);
-            var competitionTimes = parseInt(document.getElementById("competition-times").value);
-            var newRating = oldRating;
-            var calcHtml = "";
-            if (competitionTimes >= 6) newRating = oldRating - 100;
-            else if (competitionTimes == 5) newRating = oldRating - 150;
-            else if (competitionTimes == 4) newRating = oldRating - 250;
-            else if (competitionTimes == 3) newRating = oldRating - 400;
-            else if (competitionTimes == 2) newRating = oldRating - 650;
-            else if (competitionTimes == 1) newRating = oldRating - 1000;
-            else if (competitionTimes == 0) calcHtml = "<p>unrated</p>";
-            else calcHtml = "<p>Invalid</p>";
-            if (calcHtml != "<p>Invalid</p>" && calcHtml != "<p>unrated</p>") {
-                if (newRating >= 3000) calcHtml = "<p style='color:#FF0000;'>legendary grandmaster,";
-                else if (newRating >= 2600) calcHtml = "<p style='color:#FF0000;'>international grandmaster,";
-                else if (newRating >= 2400) calcHtml = "<p style='color:#FF0000;'>grandmaster,";
-                else if (newRating >= 2300) calcHtml = "<p style='color:#FF8C00;'>international master,";
-                else if (newRating >= 2100) calcHtml = "<p style='color:#FF8C00;'>master,";
-                else if (newRating >= 1900) calcHtml = "<p style='color:#AA00AA;'>candidate master,";
-                else if (newRating >= 1600) calcHtml = "<p style='color:#0000FF;'>expert,";
-                else if (newRating >= 1400) calcHtml = "<p style='color:#03A89E;'>specialist,";
-                else if (newRating >= 1200) calcHtml = "<p style='color:#008000;'>pupil,";
-                else calcHtml = "<p style='color:#808080;'>newbie,";
-                calcHtml += newRating;
-                calcHtml += "</p>";
+            var oldRating1 = parseInt(document.getElementById("old-rating").value);
+            var competitionTimes1 = parseInt(document.getElementById("competition-times").value);
+            var newRating1 = oldRating1;
+            var calcHtml1 = "";
+            if (competitionTimes1 >= 6) newRating1 = oldRating1 - 100;
+            else if (competitionTimes1 == 5) newRating1 = oldRating1 - 150;
+            else if (competitionTimes1 == 4) newRating1 = oldRating1 - 250;
+            else if (competitionTimes1 == 3) newRating1 = oldRating1 - 400;
+            else if (competitionTimes1 == 2) newRating1 = oldRating1 - 650;
+            else if (competitionTimes1 == 1) newRating1 = oldRating1 - 1000;
+            else if (competitionTimes1 == 0) calcHtml1 = "<p>unrated</p>";
+            else calcHtml1 = "<p>Invalid</p>";
+            if (calcHtml1 != "<p>Invalid</p>" && calcHtml1 != "<p>unrated</p>") {
+                if (newRating1 >= 3000) calcHtml1 = "<p style='color:#FF0000;'>legendary grandmaster,";
+                else if (newRating1 >= 2600) calcHtml1 = "<p style='color:#FF0000;'>international grandmaster,";
+                else if (newRating1 >= 2400) calcHtml1 = "<p style='color:#FF0000;'>grandmaster,";
+                else if (newRating1 >= 2300) calcHtml1 = "<p style='color:#FF8C00;'>international master,";
+                else if (newRating1 >= 2100) calcHtml1 = "<p style='color:#FF8C00;'>master,";
+                else if (newRating1 >= 1900) calcHtml1 = "<p style='color:#AA00AA;'>candidate master,";
+                else if (newRating1 >= 1600) calcHtml1 = "<p style='color:#0000FF;'>expert,";
+                else if (newRating1 >= 1400) calcHtml1 = "<p style='color:#03A89E;'>specialist,";
+                else if (newRating1 >= 1200) calcHtml1 = "<p style='color:#008000;'>pupil,";
+                else calcHtml1 = "<p style='color:#808080;'>newbie,";
+                calcHtml1 += newRating1;
+                calcHtml1 += "</p>";
             }
+            document.getElementById("res").innerHTML = calcHtml1;
         }
     </script>
 </head>
